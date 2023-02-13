@@ -1,4 +1,3 @@
- 
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".cards",
