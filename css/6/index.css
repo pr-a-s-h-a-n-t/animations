@@ -1,0 +1,21 @@
+/* rks with multiple transition on multiple elements. Did not try cross-browser compatibility. */
+body.onload *{ transform: none !important; }
+div {
+  width: fit-content;
+}
+
+#rotated {
+  transform: rotate(-50deg)/* any other transformation */
+  ;
+  transition: 6s;
+}
+
+#translated {
+  transform: translate(90px)/* any other transformation */
+  ;
+  transition: 6s;
+}
+
+.waitload {
+  transform: none !important;
+}
