@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <style>
+        CSS JSResult Skip Results Iframe EDIT ON body {
+            font-size: 1.2em;
+            font-family: 'Lato';
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .box {
+            width: 40%;
+            height: 200px;
+            background: orange;
+            border-radius: 2px;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .a {
+            margin: 120vh auto 0 auto;
+        }
+
+        .b {
+            margin: 40vh auto 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Using AOS to Add Animations</h1>
+    <h2>Basic Animation</h2>
+    <p>You need to scroll down to see the effect.</p>
+    <div class="box a" data-aos="fade-up">
+        <h2>Animated using <code>fade-up</code>.</h2>
+    </div>
+    <div class="box b" data-aos="flip-down">
+        <h2>Animated using <code>flip-down</code>.</h2>
+    </div>
+    <div class="box b" data-aos="zoom-in">
+        <h2>Animated using <code>zoom-in</code>.</h2>
+    </div>
+
+
+    <div class="box b" data-aos="fade-up">fade-up</div>
+    <div class="box b" data-aos="fade-down">fade-down</div>
+    <div class="box b" data-aos="fade-right">fade-right</div>
+    <div class="box b" data-aos="fade-left">ade-left</div>
+    <div class="box b" data-aos="fade-up-right">fade-up-right</div>
+    <div class="box b" data-aos="fade-up-left">fade-up-left</div>
+    <div class="box b" data-aos="fade-down-right">fade-down-right</div>
+    <div class="box b" data-aos="fade-down-left">fade-down-left</div>
+    <div class="box b" data-aos="flip-left">flip-left</div>
+    <div class="box b" data-aos="flip-right">flip-right</div>
+    <div class="box b" data-aos="flip-up"></div>
+    <div class="box b" data-aos="flip-down">flip-down</div>
+    <div class="box b" data-aos="zoom-in">flip-down</div>
+    <div class="box b" data-aos="zoom-in-up">zoom-in-up</div>
+    <div class="box b" data-aos="zoom-in-down">zoom-in-down</div>
+    <div class="box b" data-aos="zoom-in-left">zoom-in-left</div>
+    <div class="box b" data-aos="zoom-in-right">zoom-in-right<div>
+            <div class="box b" data-aos="zoom-out">zoom-out</div>
+            <div class="box b" data-aos="zoom-out-up">zoom-out-up</div>
+            <div class="box b" data-aos="zoom-out-down">zoom-out-down</div>
+            <div class="box b" data-aos="zoom-out-right">zoom-out-right</div>
+            <div class="box b" data-aos="zoom-out-left">zoom-out-left</div>
+            <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js">
+            </script>
+            <script>
+                AOS.init();
+
+            </script>
+
+
+</body>
+
+</html>
