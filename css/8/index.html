@@ -11,7 +11,7 @@
         .wrapper {
             display: flex;
             flex-direction: row;
-            height: 100vh;
+            height: fit-content;
             /* padding-top: 2rem !important; */
             border: 2px solid rebeccapurple;
             /* padding-top: 45px; */
@@ -20,8 +20,10 @@
         }
 
         .left_logo {
+            position: sticky;
+            top: 2rem;
             width: 50%;
-            height: 60vh;
+            height: 500px;
             background-attachment: fixed;
             border: 2px solid rebeccapurple;
             background-color: aqua;
@@ -44,6 +46,8 @@
             background-color: aquamarine;
             border: 20px solid wheat;
             border-radius: 40px;
+            position: sticky;
+            top: 2rem;
         }
 
         .logo img {
@@ -57,7 +61,8 @@
             display: flex;
             flex-direction: column;
             row-gap: 2rem;
-            position: sticky;
+            /* position: sticky;
+            top: 0; */
             
         }
     </style>
