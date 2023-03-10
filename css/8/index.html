@@ -8,30 +8,86 @@
     <title>Document</title>
 
     <style>
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            /* padding-top: 2rem !important; */
+            border: 2px solid rebeccapurple;
+            /* padding-top: 45px; */
+            justify-content: space-between;
 
+        }
+
+        .left_logo {
+            width: 50%;
+            height: 60vh;
+            background-attachment: fixed;
+            border: 2px solid rebeccapurple;
+            background-color: aqua;
+            background-image: url(./coding.svg);
+            background-position: cover;
+            background-repeat: no-repeat;
+            font-family: 'Open Sans';
+            padding: 10px;
+            background-color: #c5c5c5;
+            border: 1px solid #f5f5f5;
+            border-radius: 15px;
+            -webkit-box-shadow: 0px 0px 10px 0px #f5f5f5;
+            box-shadow: 0px 0px 10px 0px #f5f5f5;
+            /* margin-top: 4rem; */
+        }
+
+        .card {
+            width: 90%;
+            height: 400px;
+            background-color: aquamarine;
+            border: 20px solid wheat;
+            border-radius: 40px;
+        }
+
+        .logo img {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+
+        }
+
+        .right_container{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            position: sticky;
+            
+        }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="wrapper">
         <div class="left_logo">
-            <img src="./coding.svg" alt="">
+
         </div>
         <div class="right_container">
-
-            <div class="logo" >
-                <img src="./sg.svg" alt="">
-            </div>
-            <div>
-                <div class="main_heading">
-                    <h2>Always On Time</h2>
+            <div class="card">
+                <div class="logo">
+                    <img src="./sg.svg" alt="">
                 </div>
-                <div class="para">
-                    <p>All the information related to any client is considered confidential and never be disclosed
-                        to anyone</p>
-                </div>
-
             </div>
+
+            <div class="card">
+                <div class="logo">
+                    <img src="./sg.svg" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="logo">
+                    <img src="./sg.svg" alt="">
+                </div>
+            </div>
+
+
 
         </div>
 
