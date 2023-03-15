@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./App.css";
 
 export default function FetchData() {
   const [fetchedData, setFetchedData] = useState([]);
@@ -25,6 +26,7 @@ export default function FetchData() {
     });
     const [d_str_data] = filteredData;
     setSearchedData(d_str_data);
+    setInput("");
   };
   console.log(searchedData, "-------");
 
@@ -38,28 +40,20 @@ export default function FetchData() {
       />{" "}
       {""}
       <button onClick={() => handleSearch()}>Search</button>
-      <div>
-        {/* cases: 209589
-todayCases: 0
-deaths: 7896
-todayDeaths: 0
-recovered: 191390
-todayRecovered: 0
-active: 10303
-critical: 45
-casesPerOneMillion: 5143
-deathsPerOneMillion: 194
-tests: 1207654
-testsPerOneMillion: 29632
-population: 40754388
-continent: "Asia"
-oneCasePerPeople: 194
-oneDeathPerPeople: 5161
-oneTestPerPeople: 34
-activePerOneMillion: 252.81
-recoveredPerOneMillion: 4696.18
-criticalPerOneMillion: 1.1 */}
-      </div>
+      {searchedData ? (
+        <div>
+          <p> cases: {searchedData.cases} </p>
+          <p> deaths: {searchedData.deaths} </p>
+          <p> recovered: {searchedData.recovered} </p>
+          <p> todayRecovered: {searchedData.todayRecovered} </p>
+          <p> active: {searchedData.active} </p>
+          <p> critical: {searchedData.critical} </p>
+          <p> tests: {searchedData.tests} </p>
+          <p> population: {searchedData.population} </p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

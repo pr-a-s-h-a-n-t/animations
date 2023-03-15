@@ -45,9 +45,7 @@ export default function App() {
         margin: "auto",
       }}
     >
-      <div 
-       
-      >
+      <div>
         <div
           style={{
             display: "flex",
@@ -67,41 +65,39 @@ export default function App() {
           <h1>:</h1>
           <h1>{sec < 10 ? "0" + sec : sec}</h1>
         </div>
-        <div 
-           style={{
+        <div
+          style={{
             display: "flex",
             width: "100%",
             justifyContent: "space-between",
-
-           
-          }}
-         >
-        <button
-          onClick={() => {
-            setStart(true);
           }}
         >
-          Start
-        </button>
-        <button
-          onClick={() => {
-            setStart(false);
-            clearInterval(prevTimer);
-          }}
-        >
-          Pause
-        </button>
-        <button
-          onClick={() => {
-            setStart(false);
-            clearInterval(prevTimer);
-            setSec(0);
-            setMin(0);
-            setHr(0);
-          }}
-        >
-          Reset
-        </button>
+          <button
+            onClick={() => {
+              setStart(true);
+            }}
+          >
+            Start
+          </button>
+          <button
+            onClick={() => {
+              setStart(false);
+              clearInterval(prevTimer);
+            }}
+          >
+            Pause
+          </button>
+          <button
+            onClick={() => {
+              setStart(false);
+              clearInterval(prevTimer);
+              setSec(0);
+              setMin(0);
+              setHr(0);
+            }}
+          >
+            Reset
+          </button>
         </div>
       </div>
     </div>
