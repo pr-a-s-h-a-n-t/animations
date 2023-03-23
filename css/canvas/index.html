@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center">
+
+        <canvas onclick="handleArrowMovement(event)" id="myCanvas" align="center">
+            <!--  fallback content  -->
+            Bubble app (Something is wrong)
+            Your browser does not support Canvas, Please upgrade your browser to latest version!!!
+        </canvas>
+
+        <button onclick="reset()" align="end">Reset</button>
+    </div>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        // canvas.addEventListener('click', handleArrowMovement( ));
+        var ctx = canvas.getContext("2d");
+        canvas.width = 480;
+        canvas.height = 640;
+        // canvas.width = window.innerWidth;
+        // canvas.height = window.innerHeight;
+
+        // const colors = ["red", "green", "blue", "yellow"];
+        // const yDistance = [100, 250, 400, 550]
+        const data = [
+            {
+                id: 0,
+                colors: "red",
+                yDistance: 100,
+            },
+            {
+                id: 1,
+                colors: "green",
+                yDistance: 250,
+            },
+            {
+                id: 2,
+                colors: "blue",
+                yDistance: 400,
+            },
+            {
+                id: 3,
+                colors: "yellow",
+                yDistance: 550,
+            },
+        ];
+
+        // Define the circle's position and size
+        var circleX = 100;
+        var circleY = canvas.height / 2;
+        var circleRadius = 52;
+
+        // Define the arrow's position and size
+        var arrowX = canvas.width - circleRadius;
+        var arrowY = canvas.height / 2;
+        var arrowSize = 20;
+        var speed = 32;
+        var direction = -1;
+        var x = canvas.width;
+
+        let id_0, id_1, id_2, id_3;
+
+        function reset() {
+            window.location.reload();
+        }
+
+        // Define a function to draw the circle and arrow
+        function drawcircle(color, circleNumber) {
+            for (var i = 0; i < 4; i++) {
+                ctx.beginPath();
+                ctx.arc(circleX, data[i].yDistance, circleRadius, 0, 2 * Math.PI);
+
+                ctx.fillStyle = color && circleNumber === i ? color : data[i].colors;
+                ctx.fill();
+                ctx.lineWidth = 1;
+                ctx.stroke();
+                ctx.closePath();
+            }
+        }
+
+        function drawArrow(id, relocation) {
+            for (let i = 0; i < 4; i++) {
+                if (id === i) {
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.moveTo(relocation - arrowSize, data[id].yDistance);
+                    ctx.lineTo(relocation, data[id].yDistance);
+
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.lineCap = "round";
+
+                    ctx.closePath();
+
+                    // Draw the arrowhead
+                    ctx.beginPath();
+
+                    ctx.moveTo(relocation - arrowSize, data[id].yDistance - arrowSize / 2);
+                    ctx.lineTo(relocation - arrowSize, data[id].yDistance + arrowSize / 2);
+                    ctx.lineTo(relocation - arrowSize * 2, data[id].yDistance);
+                    ctx.fillStyle = data[id].colors;
+                    ctx.fill();
+                    ctx.closePath();
+                } else if (id !== 0) {
+                    let i = 0
+                    let x_ = canvas.width;
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.moveTo(x_ - arrowSize, data[i].yDistance);
+                    ctx.lineTo(x_, data[i].yDistance);
+
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.lineCap = "round";
+
+                    ctx.closePath();
+
+                    // Draw the arrowhead
+                    ctx.beginPath();
+
+                    ctx.moveTo(x_ - arrowSize, data[i].yDistance - arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize, data[i].yDistance + arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize * 2, data[i].yDistance);
+                    ctx.fillStyle = data[i].colors;
+                    ctx.fill();
+                    ctx.closePath();
+
+                }
+                else if (id !== 1) {
+                    let i = 1;
+                    let x_ = canvas.width;
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.moveTo(x_ - arrowSize, data[1].yDistance);
+                    ctx.lineTo(x_, data[1].yDistance);
+
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.lineCap = "round";
+
+                    ctx.closePath();
+
+                    // Draw the arrowhead
+                    ctx.beginPath();
+
+                    ctx.moveTo(x_ - arrowSize, data[1].yDistance - arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize, data[1].yDistance + arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize * 2, data[1].yDistance);
+                    ctx.fillStyle = data[1].colors;
+                    ctx.fill();
+                    ctx.closePath();
+
+
+                }
+
+                else if (id !== 2) {
+                    let x_ = canvas.width;
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.moveTo(x_ - arrowSize, data[2].yDistance);
+                    ctx.lineTo(x_, data[2].yDistance);
+
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.lineCap = "round";
+
+                    ctx.closePath();
+
+                    // Draw the arrowhead
+                    ctx.beginPath();
+
+                    ctx.moveTo(x_ - arrowSize, data[2].yDistance - arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize, data[2].yDistance + arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize * 2, data[2].yDistance);
+                    ctx.fillStyle = data[2].colors;
+                    ctx.fill();
+                    ctx.closePath();
+                }
+
+                else if (id !== 3) {
+                    let x_ = canvas.width;
+                    ctx.beginPath();
+                    ctx.lineWidth = 5;
+                    ctx.moveTo(x_ - arrowSize, data[3].yDistance);
+                    ctx.lineTo(x_, data[3].yDistance);
+
+                    ctx.fill();
+                    ctx.stroke();
+                    ctx.lineCap = "round";
+
+                    ctx.closePath();
+
+                    // Draw the arrowhead
+                    ctx.beginPath();
+
+                    ctx.moveTo(x_ - arrowSize, data[3].yDistance - arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize, data[3].yDistance + arrowSize / 2);
+                    ctx.lineTo(x_ - arrowSize * 2, data[3].yDistance);
+                    ctx.fillStyle = data[3].colors;
+                    ctx.fill();
+                    ctx.closePath();
+                }
+            }
+        }
+
+        // Call the draw function
+        drawcircle();
+        drawArrow();
+
+        function handleArrowMovement(event) {
+            let offsetX = event.offsetX;
+            let offsetY = event.offsetY;
+
+            if (
+                offsetX >= 50 &&
+                event.offsetX <= 100 + 52 &&
+                offsetY >= 100 - 52 &&
+                offsetY <= 100 + 52
+            ) {
+                console.log("offsetX", offsetX);
+                // if (arrowX == 480) {
+
+                id_0 = setInterval(() => {
+                    moveArrow(0);
+                }, 1000);
+                // }
+            } else if (
+                offsetX >= 50 &&
+                event.offsetX <= 100 + 52 &&
+                offsetY >= 250 - 52 &&
+                offsetY <= 250 + 52
+            ) {
+                console.log("offsetX", offsetX);
+
+                id_1 = setInterval(() => {
+                    moveArrow(1);
+                }, 1000);
+            } else if (
+                offsetX >= 50 &&
+                event.offsetX <= 100 + 52 &&
+                offsetY >= 351 &&
+                offsetY <= 450
+            ) {
+                console.log("offsetX --blue--", offsetX);
+                id_2 = setInterval(() => {
+                    moveArrow(2);
+                }, 1000);
+            } else if (
+                offsetX >= 50 &&
+                event.offsetX <= 100 + 52 &&
+                offsetY >= 500 &&
+                offsetY <= 600
+            ) {
+                console.log("offsetX -yellow--", offsetY);
+                id_3 = setInterval(() => {
+                    moveArrow(3);
+                }, 1000);
+            }
+            console.log("offsetX", offsetX, " offsetY", offsetY);
+
+            // console.log("calling draw function...", e );
+        }
+
+        function moveArrow(id) {
+            console.log("calling move function");
+
+            x += speed * direction;
+            ctx.clearRect(160, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            drawArrow(id, x);
+
+            if (x <= 205) {
+                x = canvas.width;
+                clearInterval(
+                    id === 0 ? id_0 : id === 1 ? id_1 : id === 2 ? id_2 : id == 3 ? id_3 : ""
+                );
+                drawcircle("white", id);
+
+                console.log("ssss");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
