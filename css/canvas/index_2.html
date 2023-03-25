@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 2px dotted black;
+            background-color: antiquewhite;
+            width: 80%;
+            height: 60%;
+        }
+
+        body {
+            margin: 0;
+            box-sizing: border-box !important;
+            width: 100vw;
+            height: 100vh;
+            background-color: aqua;
+            display: flex;
+            align-items: center !important;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="magic">
+        Your browser does not support Canvas, Plz change or
+        upgrade your browser with latest version!
+    </canvas>
+    <!-- js -->
+    <script>
+        let canvas = document.getElementById("magic");
+        console.log(canvas);
+
+        // canvas.width = window.innerWidth;
+        // canvas.height = window.innerHeight;
+        // canvas.width = 80;
+        // canvas.height = 80;
+
+        // create a context 
+        let ctx = canvas.getContext("2d");
+        console.log(ctx);
+
+        let X = 10;  //
+        let Y = 5; //
+        let rectangleWidth = 20; //
+        let rectangleHeight = 10; //
+
+        // draw square till canvas width && height!
+        for (let i = 0; i < canvas.width - rectangleWidth - X; i = i + 30) {
+
+            for (let j = 0; j < canvas.height - rectangleHeight - Y; j = j + 15) {
+                ctx.fillRect(X + i, Y + j, rectangleWidth, rectangleHeight);
+            }
+
+        }
+
+        // draw square till canvas height!
+
+
+        // ctx.fillRect(spacingBetRectangle + 30, 5, 20, 10);
+        // ctx.fillRect(spacingBetRectangle + 60, 5, 20, 10);
+
+        ctx.fillStyle = "blue";
+
+
+
+
+    </script>
+</body>
+
+</html>
