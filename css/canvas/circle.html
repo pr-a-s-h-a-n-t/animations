@@ -9,6 +9,8 @@
     <style>
         body {
             margin: 0;
+            background-color: aquamarine;
+
         }
     </style>
 </head>
@@ -36,6 +38,7 @@
         let dx = 10;
         let dy = 10;
         let radius = 30;
+        const colors = ["red", "green", "blue", "yellow"];
 
         // ctx.arc(X, Y, radius, stating_point, angle );
         var animationCounter = 0;
@@ -44,11 +47,17 @@
             animationCounter++;
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.beginPath();
-            ctx.arc(x, y, radius, 0, 2 * Math.PI, false)
+            ctx.beginPath(); // this clear the entire canvas!
 
-            ctx.strokeStyle = "blue";
-            ctx.stroke();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI, false) // create a circle!
+
+
+            ctx.fillStyle = "red"; 
+            ctx.fill(); // fill color inside the circle
+
+            ctx.lineWidth = 10;
+            ctx.stroke(); // withod stroke method nothing will be drawn or visible.
+            ctx.closePath();  
             if (x + radius > innerWidth || x - radius < 0) {
                 dx = -dx;
             }
@@ -56,8 +65,8 @@
             if (y + radius > innerHeight || y - radius < 0) {
                 dy = -dy;
             }
-            x += dx;
-            y += dy;
+            y += dy; // increment the y distance  !
+            x += dx; // increment the x distance !
 
             console.log("animation counter", animationCounter);
         }
