@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            /* background-color: blueviolet !important; */
+
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="pr">
+
+    </canvas>
+
+    <script>
+        let canvas = document.getElementById("pr");
+
+        let ctx = canvas.getContext("2d");
+        // console.log(canvas, "document", ctx);
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        var animeId;
+        function Circle(radius, x, y, dx, dy, color, id) {
+
+            this.radius = radius;
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+            this.color = color;
+            this.id = id;
+
+            this.draw = function () {
+
+                console.log("draw", x, y);
+                ctx.beginPath(); // this clear the entire canvas! event listener
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false)
+                ctx.lineWidth = 5;
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.stroke();
+                ctx.closePath();
+            }
+
+            this.update = function () {
+                ctx.beginPath(); // this clear the entire canvas!
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false) // create a circle!
+                ctx.stroke();
+                ctx.closePath();
+                if (this.x + this.radius < 160 - this.radius) {
+                    console.log("condition is true");
+                    console.log("before clearing animation Id", animeId);
+
+                    cancelAnimationFrame(animeId);
+                    console.log("after clearing animation id", animeId);
+                    // this.draw("orange");
+
+
+                }
+                this.x += this.dx; // increment the x distance !
+               
+                this.draw();
+            }
+        }
+
+
+        const colors = ["red", "green", "blue", "yellow"];
+
+
+        // let circle = new Circle(radius, x, y, dx, dy);
+
+
+        var CircleArray = [];
+
+        let radius = 30;
+        let xDistance = 400;
+        let dx = Math.random() - 2;
+        let dy = Math.random() - 2;
+
+
+        const yDistance = [100, 250, 400, 550]
+
+        for (var i = 0; i <= 3; i++) {
+            let color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');
+
+            CircleArray.push(new Circle(radius, xDistance, yDistance[i], dx, dy,
+                color, id = i));
+        }
+
+        console.log(CircleArray)
+
+        var animationCounter = 0;
+
+
+
+
+
+
+
+        // now i am going to add event listener!!
+
+        let click = {
+            x: "",
+            y: "",
+        }
+
+        var animationId = null;
+
+        window.addEventListener("click", function (event) {
+            click.x = event.offsetX;
+            click.y = event.offsetY;
+
+
+            if (
+                click.x >= xDistance - radius &&
+                click.x <= xDistance + radius &&
+                click.y >= yDistance[0] - radius &&
+                click.y <= yDistance[0] + radius
+            ) {
+                // console.log("offsetX", offsetX, );
+                console.log("1st circle clicked");
+                if (click.x >= xDistance) {
+                    animationId = 0;
+                    animate()
+                }
+            }
+
+            if (
+                click.x >= xDistance - radius &&
+                click.x <= xDistance + radius &&
+                click.y >= yDistance[1] - radius &&
+                click.y <= yDistance[1] + radius
+            ) {
+                // console.log("offsetX", offsetX, );
+                console.log("2nd circle clicked");
+                if (click.x >= xDistance) {
+                    animationId = 1;
+                    animate()
+                }
+            }
+
+            if (
+                click.x >= xDistance - radius &&
+                click.x <= xDistance + radius &&
+                click.y >= yDistance[2] - radius &&
+                click.y <= yDistance[2] + radius
+            ) {
+                // console.log("offsetX", offsetX, );
+                console.log("3rd circle clicked");
+                if (click.x >= xDistance) {
+                    animationId = 2;
+                    animate()
+                }
+
+            }
+
+            if (
+                click.x >= xDistance - radius &&
+                click.x <= xDistance + radius &&
+                click.y >= yDistance[3] - radius &&
+                click.y <= yDistance[3] + radius
+            ) {
+                // console.log("offsetX", offsetX, );
+                console.log("4th circle clicked");
+                if (click.x >= xDistance) {
+                    animationId = 3;
+                    animate()
+                }
+
+            }
+
+            console.log("offsetX--", event.offsetX, "offsetY--", event.offsetY);
+
+        })
+
+        function animate() {
+            animeId = requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            CircleArray[animationId].update();
+            for (var i = 0; i < CircleArray.length; i++) {
+
+                CircleArray[i].draw();
+            }
+
+
+        }
+
+        for (var i = 0; i < CircleArray.length; i++) {
+            // console.log(CircleArray[i], "---", i);
+            CircleArray[i].update();
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
