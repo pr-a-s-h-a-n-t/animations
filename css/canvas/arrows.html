@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 2px dotted black;
+            background-color: antiquewhite;
+            width: 80%;
+            height: 60%;
+        }
+
+        body {
+            margin: 0;
+            box-sizing: border-box !important;
+            width: 100vw;
+            height: 100vh;
+            background-color: aqua;
+            display: flex;
+            align-items: center !important;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="magic">
+        Your browser does not support Canvas, Plz change or
+        upgrade your browser with latest version!
+    </canvas>
+    <!-- js -->
+    <script>
+        let canvas = document.getElementById("magic");
+        console.log(canvas);
+
+
+        // create a context 
+        let ctx = canvas.getContext("2d");
+        console.log(ctx);
+
+
+        // draw line arrow pointing towards right!
+        ctx.beginPath();
+        ctx.moveTo(10, 10); // this line is invisible until we call stroke method
+        ctx.lineTo(50, 10); // need to call stroke method
+        //arrow
+        ctx.moveTo(10, 10);
+        ctx.lineTo(15, 5);
+        ctx.moveTo(10, 10);
+        ctx.lineTo(15, 15);
+        ctx.stroke();
+        ctx.closePath();
+
+
+
+
+        // draw arrow pointing towards left!
+        ctx.beginPath();
+        ctx.moveTo(240, 10);
+        ctx.lineTo(290, 10);
+        // arrow
+        // ctx.strokeWidth = 10;
+        ctx.moveTo(282, 5);
+        ctx.lineTo(290, 10);
+        ctx.moveTo(282, 15)
+        ctx.lineTo(290, 10);
+      
+        ctx.stroke();
+        ctx.closePath();
+
+        // [pointing to bottom]
+        function centerArrow() {
+
+            ctx.beginPath();
+            ctx.moveTo(150, 10);
+            ctx.lineTo(150, 30);
+            //arrow head
+            ctx.moveTo(150, 30);
+            ctx.lineTo(142, 22);
+
+            ctx.moveTo(150, 30);
+            ctx.lineTo(158, 22);
+            ctx.stroke();
+            ctx.closePath();
+
+        }
+        window.onload = centerArrow();
+
+    </script>
+
+
+</body>
+
+</html>

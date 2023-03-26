@@ -19,7 +19,7 @@
             box-sizing: border-box !important;
             width: 100vw;
             height: 100vh;
-            background-color: aqua;
+            background-color: #90d6d8;
             display: flex;
             align-items: center !important;
             justify-content: center;
@@ -53,6 +53,8 @@
 
         // draw square till canvas width && height!
         for (let i = 0; i < canvas.width - rectangleWidth - X; i = i + 30) {
+            ctx.fillStyle = "#FE6F5E";
+            
 
             for (let j = 0; j < canvas.height - rectangleHeight - Y; j = j + 15) {
                 ctx.fillRect(X + i, Y + j, rectangleWidth, rectangleHeight);
@@ -60,17 +62,7 @@
 
         }
 
-        // draw square till canvas height!
-
-
-        // ctx.fillRect(spacingBetRectangle + 30, 5, 20, 10);
-        // ctx.fillRect(spacingBetRectangle + 60, 5, 20, 10);
-
-        ctx.fillStyle = "blue";
-
-
-
-
+        
     </script>
 </body>
 
