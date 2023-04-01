@@ -9,8 +9,21 @@
     <style>
         body {
             margin: 0;
-            background-color: blueviolet !important;
 
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+
+        }
+
+        canvas {
+            border: 2px solid greenyellow;
+            /* padding: 8px; */
+            border-radius: 20px;
+            background-color: blueviolet !important;
         }
     </style>
 </head>
@@ -26,8 +39,8 @@
         let ctx = canvas.getContext("2d");
         // console.log(canvas, "document", ctx);
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth - 200;
+        canvas.height = window.innerHeight - 200;
 
 
         //draw circle
@@ -108,13 +121,13 @@
 
         var CircleArray = [];
 
-        for (var i = 0; i <= 100; i++) {
+        for (var i = 0; i <= 1000; i++) {
             let x = Math.random() * innerWidth;
             let y = Math.random() * innerHeight;
-            let dx = Math.random() - 2;
-            let dy = Math.random() - 2;
+            let dx = Math.random() - 5;
+            let dy = Math.random() - 5;
             let color = '#' + (Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0');;
-            let radius = 30;
+            let radius = 10;
             CircleArray.push(new Circle(radius, x, y, dx, dy, color));
         }
 
