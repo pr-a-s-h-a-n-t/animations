@@ -1,10 +1,25 @@
 import "./styles.css";
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./component/Card";
 import Button from "./component/Button";
 
 export default function App() {
   const [cart, setCart] = React.useState(() => []);
+  const [totalPrice, setTotalPrice] = React.useState(() => 0);
+
+  const calTotalPrice = () => {
+    let calPrice = 0;
+    let temp =   cart.length > 0 ?  cart.map((ele, index)=>{
+        calPrice = calPrice  +  ele.price
+    }) : ""
+
+    setTotalPrice(()=>calPrice);
+  }
+
+  useEffect((()=>{
+    calTotalPrice();
+  }),[cart])
+
 
   const cardData = [
     {
@@ -49,6 +64,8 @@ export default function App() {
             </div>
           );
         })}
+
+        <h3 className="_total">Total Cart Price : {totalPrice } $</h3>
       </div>
     </div>
   );
@@ -56,6 +73,6 @@ export default function App() {
 
 /**
  * Q. Make a web page, add a product cards and
- * add to card functionility. using react JS.
+ * add to card functionality. using react JS.
  *
  */

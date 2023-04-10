@@ -10,7 +10,7 @@ function Card({ label, price, path }) {
       </div>
       <div className="card_price">
         <h6>{label}</h6>
-        <h6>{price}</h6>
+        <h6>{price} $</h6>
       </div>
     </div>
   );
