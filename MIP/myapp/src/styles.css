@@ -1,0 +1,33 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.cards_wrapper, .Carts_wrapper {
+  display: flex;
+  flex-direction: row;
+  row-gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5rem;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+
+}
+
+.card_wrapper, .Cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+hr{
+  background-origin: padding-box;
+  border: 5px solid rebeccapurple;
+  margin: 1rem 0;
+}
+
+ 
