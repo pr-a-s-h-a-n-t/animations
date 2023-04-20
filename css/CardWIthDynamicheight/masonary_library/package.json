@@ -1,0 +1,15 @@
+{
+  "name": "dc",
+  "version": "1.0.0",
+  "description": "dynamic card design UI masonary library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2"
+  }
+}

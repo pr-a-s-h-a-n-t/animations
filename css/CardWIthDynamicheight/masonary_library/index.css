@@ -1,0 +1,45 @@
+/* force scrollbar */
+html { overflow: scroll; }
+
+body {
+  font-family: sans-serif;
+}
+
+/* ---- grid ---- */
+
+.grid {
+  background: #ddd;
+  /* padding: 2rem; */
+  width: 100vw;
+  
+  display: flex !important;
+  overscroll-behavior-inline: auto;
+  overflow-y: hidden;
+}
+
+/* clear fix */
+.grid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 500px;
+}
+
+.grid-item {
+  border: 2px solid black;
+  margin-bottom: 0.5rem !important;
+
+  border-radius: 1.5rem;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  border-radius: 1.5rem;
+}
