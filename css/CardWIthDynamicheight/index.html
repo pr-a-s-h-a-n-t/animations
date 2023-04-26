@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="card">
-            <h2> XYZ </h2>
+            <h2 id="typing_animation"> XYZ </h2>
             <div class="img"></div>
             <!-- <img src="" alt="no img"> -->
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio impedit nam ullam necessitatibus
@@ -184,6 +184,18 @@
                 Deleniti eligendi ea tenetur. </p>
         </div>
     </div>
+<!-- typing text -->
+<script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+<script>
+    // Hero heading  typing Animation code. start
+    var typed = new Typed('#typing_animation', {
+        strings: [' xyz',],
+        typeSpeed: 200,
+        backSpeed: 150,
+        loop: true,
+    });
+	// end
+</script>
 </body>
 
 </html>

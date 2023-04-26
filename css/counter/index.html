@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Up Animation</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <i class="fa-solid fa-briefcase"></i>
+            <span class="num" data-val="111">100 </span>
+            <span>%</span>
+            <span class="text">Job/Internship Gurantee</span>
+        </div>
+
+
+
+    </div>
+    <!-- Script -->
+    <script>
+        let valueDisplays = document.querySelectorAll(".num");
+        let interval = 9000;
+        valueDisplays.forEach((valueDisplay) => {
+            let startValue = 100;
+            let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+            let duration = Math.floor(interval / endValue);
+            let counter = setInterval(function () {
+                startValue += 1;
+                valueDisplay.textContent = startValue;
+                if (startValue == endValue) {
+                    clearInterval(counter);
+                }
+            }, duration);
+        });
+
+
+    </script>
+</body>
+
+</html>
