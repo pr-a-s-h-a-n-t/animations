@@ -76,4 +76,26 @@ if (!Array.prototype.length) {
   Array.prototype.length = val;
 }
 
-console.log(array.length);
+// console.log(array.length);
+
+
+
+
+
+//this keyword
+var caller= "mom"; 
+
+const call = {
+  // caller: "mom", 
+  says: () => {
+    console.log(`Hey, ${this.caller} just called.`); // ans should be undefined 
+  },
+};
+
+function Greeting(name){
+  this.name = name
+}
+
+
+
+call.says();
