@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  text-align:center;
+  text-align: center;
   font-size: 40px;
 }
 
@@ -22,7 +22,7 @@ ul {
 }
 
 ul li {
-  position:relative;
+  position: relative;
   list-style-type: none;
   width: 6px;
   background-color: rgb(138, 14, 233);
@@ -32,18 +32,31 @@ ul li {
 
 ul li::after {
   background: rgb(244, 3, 136);
-  content: '';
+  content: "";
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  position:absolute;
-  left:50%;
+  position: absolute;
+  left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  }
+}
 
+.uys {
+  /* width: 120px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: chartreuse;
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translate(50px, 50px);  */
+}
 
-ul li div{
+ul li div {
   position: relative;
   width: 400px;
   padding: 15px;
@@ -67,25 +80,27 @@ time {
   margin-bottom: 10px;
 }
 
-ul li div {
+/* ul li div {
   visibility: hidden;
   opacity: 0;
-  transition: all .5s ease-in-out;
-}
+  transition: all 0.5s ease-in-out;
+} */
 
-ul li:nth-child(odd) div {
+/* ul li:nth-child(odd) div {
   transform: translate3d(200px, 0, 0);
 }
 
 ul li:nth-child(even) div {
   transform: translate3d(-200px, 0, 0);
-}
+} */
 
 ul li.show div {
   transform: none;
   visibility: visible;
   opacity: 1;
 }
+
+
 
 @media screen and (max-width: 900px) {
   ul li div {

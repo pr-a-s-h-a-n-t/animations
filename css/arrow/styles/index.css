@@ -1,0 +1,36 @@
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 60px;
+  column-gap: 60px;
+  
+
+}
+.child {
+  width: 250px;
+  height: 200px;
+  border: 2px solid black;
+  text-align: center;
+  column-gap: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.child > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 4px;
+  border-color: bisque;
+}
+p {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2rem;
+}
