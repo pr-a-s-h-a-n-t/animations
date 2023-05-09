@@ -1,0 +1,73 @@
+<!-- <script>
+    function downloadPdf(url) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.responseType = 'blob';
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const blob = xhr.response;
+          const link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = url.split('/').pop();
+          link.click();
+        }
+      };
+      xhr.send();
+    }
+
+    setTimeout(() => {
+      const frontEnd = document.getElementById('downloadbtn1');
+      const mba = document.getElementById('downloadbtn2');
+      const mernStack = document.getElementById('downloadbtn3');
+
+      downloadBtn.addEventListener('click', () => {
+        downloadPdf('');
+      });
+    }, 0);
+  </script>
+
+  <section>
+    <h1>Download PDF</h1>
+    <button id="downloadbtn1">
+    <button id="downloadbtn3">
+    <button id="downloadbtn2">section> -->
+
+  
+    <script>
+      function downloadPdf(url) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.responseType = 'blob';
+        xhr.onload = function () {
+          if (xhr.status === 200) {
+            const blob = xhr.response;
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = url.split('/').pop();
+            link.click();
+          }
+        };
+        xhr.send();
+      }
+  
+      setTimeout(() => {
+        const downloadBtns = document.querySelectorAll('.download-btn');
+        downloadBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const url = btn.dataset.url;
+            downloadPdf(url);
+          });
+        });
+      }, 0);
+    </script>
+  
+    <section>
+      <h1>Download PDF</h1>
+      <button class="download-btn" data-url="https://cdn.zapier.com/storage/learn_ebooks/e06a35cfcf092ec6dd22670383d9fd12.pdf"> Download Front end</button>
+      <button class="download-btn" data-url="https://cdn.zapier.com/storage/learn_ebooks/e06a35cfcf092ec6dd22670383d9fd12.pdf"> Download MernStack</button>
+      <button class="download-btn" data-url="https://cdn.zapier.com/storage/learn_ebooks/e06a35cfcf092ec6dd22670383d9fd12.pdf"> Download Mba</button>
+
+  
+    </section>
+  
+  
