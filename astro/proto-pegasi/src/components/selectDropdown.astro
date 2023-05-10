@@ -1,0 +1,76 @@
+---
+const course = [
+  {
+    value: "mernStack",
+    label: "MERN-Stack",
+  },
+  {
+    value: "mba",
+    label: "MBA",
+  },
+  {
+    value: "frontEnd",
+    label: "Font-End",
+  },
+  {
+    value: "dataScience",
+    label: "Data Science Ai+ Ml+",
+  },
+];
+---
+
+<script is:inline>
+  function urlchange() {
+    let selectCourse = document.getElementById("selectCourse");
+    console.log("curriculum", selectCourse.options.value);
+
+    let params = location.pathname;
+    console.log("curriculum", selectCourse.value, "cje", selectCourse);
+    if (selectCourse !== null) {
+      if (params === "/mernstack") {
+        selectCourse.value = "mernStack";
+      } else if (params === "/mba") {
+        selectCourse.value = "mba";
+      } else if (params === "/frontend") {
+        selectCourse.value = "frontEnd";
+      } else if (params === "/datascience") {
+        selectCourse.value = "dataScience";
+      } else {
+        selectCourse.value = "selectcourse";
+      }
+    }
+
+    console.log("curriculum", selectCourse.value);
+  }
+
+  function updateurlchange(event) {
+    let selectCourse = document.getElementById("selectCourse");
+    console.log("prev val", event.target.value);
+
+    selectCourse.options.value = event;
+
+    console.log("value got update", selectCourse.value);
+  }
+
+  window.onload = setTimeout(() => {
+    urlchange();
+  }, 0);
+</script>
+
+<section>
+  <div>
+    <select
+      onchange="updateurlchange(event)"
+      id="selectCourse"
+      class="form"
+      name="course"
+    >
+      <option value="selectcourse">Select course**</option>
+      {
+        course.map((data) => {
+          return <option value={data.value}>{data.label}</option>;
+        })
+      }
+    </select>
+  </div>
+</section>
