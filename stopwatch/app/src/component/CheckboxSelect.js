@@ -36,6 +36,16 @@ function CheckboxSelect() {
   };
 
   console.log(myArmor, "myArmor");
+  // Q. what is the output of the below function and why?
+  // function guessTheOutPut() {
+  //   return;
+  //   const obj = {
+  //     guess: "the output",
+  //   };
+  // }
+  // console.log(guessTheOutPut(), "guessTheOutPut function invoked");
+  // o/p - undefined
+
   return (
     <div className="App">
       <h1>Select Armor </h1>
