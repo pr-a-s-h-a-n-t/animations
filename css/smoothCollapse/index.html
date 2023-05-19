@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- make simple collapse in vanilla js -->
+
+    <div class="container">
+        <div class="header">
+            <h1>Header</h1>
+        </div>
+        <div id='_p' class="_p  col">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        </div>
+    </div>
+
+    <style>
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #ccc;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .content {
+            padding: 10px;
+            display: none;
+        }
+
+        .col {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transition: all 1s ease-in-out;
+            text-align: center;
+        }
+
+        .col.show {
+            opacity: 1;
+            height: 55px;
+            transition: all 1s ease-in-out;
+        }
+    </style>
+
+    <script>
+        const header = document.querySelector('.header');
+        const content = document.querySelector('#_p');
+
+        header.addEventListener('click', () => {
+
+            console.log("clicked")
+            content.classList.toggle("show")
+
+        })
+    </script>
+
+
+</body>
+
+</html>
