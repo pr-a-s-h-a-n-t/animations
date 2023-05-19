@@ -80,19 +80,20 @@ time {
   margin-bottom: 10px;
 }
 
-/* ul li div {
+/* animation start */
+ul li div {
   visibility: hidden;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
-} */
+  transition: all 0.9s ease-in-out;
+}
 
-/* ul li:nth-child(odd) div {
+ul li:nth-child(odd) div {
   transform: translate3d(200px, 0, 0);
 }
 
 ul li:nth-child(even) div {
   transform: translate3d(-200px, 0, 0);
-} */
+}
 
 ul li.show div {
   transform: none;
@@ -100,7 +101,7 @@ ul li.show div {
   opacity: 1;
 }
 
-
+/* animation end */
 
 @media screen and (max-width: 900px) {
   ul li div {
