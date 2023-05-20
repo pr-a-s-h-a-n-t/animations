@@ -5,7 +5,7 @@ import App from './App';
 import FetchData from './FetchData';
  import StarProb from "./component/StarProb";
 import CheckboxSelect from "./component/CheckboxSelect";
-import ApiCall from "./component/ApiCall";
+import ApiCall from "./component/ApiCall/ApiCall";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
