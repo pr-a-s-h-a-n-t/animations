@@ -4,11 +4,13 @@ import App from './App'
 import './index.css'
 import CaseOne from "../src/component/new";
 import ReducerHook from "./component/Reducer";
+import ParentStateComp from "./component/Contex";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <CaseOne /> */}
-    <ReducerHook />
+    {/* <ReducerHook /> */}
+    <ParentStateComp />
   </React.StrictMode>
 );
