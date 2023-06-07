@@ -5,12 +5,14 @@ import './index.css'
 import CaseOne from "../src/component/new";
 import ReducerHook from "./component/Reducer";
 import ParentStateComp from "./component/Contex";
+import Db from "./component/Db";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <CaseOne /> */}
     {/* <ReducerHook /> */}
-    <ParentStateComp />
+    {/* <ParentStateComp /> */}
+    <Db />
   </React.StrictMode>
 );
