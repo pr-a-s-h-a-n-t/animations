@@ -6,6 +6,7 @@ import CaseOne from "../src/component/new";
 import ReducerHook from "./component/Reducer";
 import ParentStateComp from "./component/Contex";
 import Db from "./component/Db";
+import Toggle from "./component/DOm";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <CaseOne /> */}
     {/* <ReducerHook /> */}
     {/* <ParentStateComp /> */}
-    <Db />
+    {/* <Db /> */}
+    <Toggle />
   </React.StrictMode>
 );
