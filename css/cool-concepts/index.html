@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> color Concepts </title>
+    <link rel="stylesheet" href="./color.css">
+    <style>
+        .dialogBtn {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        #dialog {
+            width: 50%;
+            height: 152px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="openDialog">Open Modal..</button>
+    <dialog id="dialog">
+        <h1>Dialog</h1>
+        <p>This is a dialog window</p>
+        <button class="dialogBtn">Close</button>
+    </dialog>
+    <marquee> This is a marquee </marquee>
+
+
+
+    <marquee direction="right" behavior="scroll"> This is a marquee </marquee>
+    <!-- marquee tag behaviours type
+behaviour="scroll"  //default
+behaviour="slide"
+behaviour="alternate"
+
+
+-->
+
+    <script>
+        const dialog = document.querySelector('#dialog');
+        const openDialog = document.querySelector('#openDialog');
+
+        openDialog.addEventListener('click', () => {
+            dialog.showModal();
+        });
+
+        const dialogBtn = document.querySelector('.dialogBtn');
+        dialogBtn.addEventListener('click', () => {
+            dialog.close();
+        });
+    </script>
+
+</body>
+
+</html>

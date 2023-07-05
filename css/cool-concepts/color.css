@@ -1,0 +1,121 @@
+/*
+
+q. What are the different types of Selectors in CSS?
+A CSS selector is the part of a CSS ruleset that actually selects the content you want to style. Different types of selectors are listed below.
+
+Universal Selector: The universal selector works like a wildcard character, selecting all elements on a page. In the given example, the provided styles will get applied to all the elements on the page.
+
+* {
+  color: "green";
+  font-size: 20px;
+  line-height: 25px;
+}
+Element Type Selector: This selector matches one or more HTML elements of the same name. In the given example, the provided styles will get applied to all the ul elements on the page.
+
+ul {
+  line-style: none;
+  border: solid 1px #ccc;
+}
+ID Selector: This selector matches any HTML element that has an ID attribute with the same value as that of the selector. In the given example, the provided styles will get applied to all the elements having ID as a container on the page.
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+<div id="container"></div>
+Class Selector: The class selector also matches all elements on the page that have their class attribute set to the same value as the class.  In the given example, the provided styles will get applied to all the elements having ID as the box on the page.
+
+.box {
+  padding: 10px;
+  margin: 10px;
+  width: 240px;
+}
+
+<div class="box"></div>
+Descendant Combinator: The descendant selector or, more accurately, the descendant combinator lets you combine two or more selectors so you can be more specific in your selection method.
+
+#container .box {
+	float: left;
+	padding-bottom: 15px;
+    color: red;
+} 
+
+
+<div id="container">
+	<div class="box"></div>
+	
+	<div class="box-2"></div>
+</div>
+
+<div class=”box”></div>
+This declaration block will apply to all elements that have a class of box that is inside an element with an ID of the container. It’s worth noting that the .box element doesn’t have to be an immediate child: there could be another element wrapping .box, and the styles would still apply.
+
+Child Combinator: A selector that uses the child combinator is similar to a selector that uses a descendant combinator, except it only targets immediate child elements.
+
+#container> .box {
+	float: left;
+	padding-bottom: 15px;
+}
+
+<div id="container">
+	<div class="box"></div>
+	
+	<div>
+		<div class="box"></div>
+	</div>
+</div>
+The selector will match all elements that have a class of box and that are immediate children of the #container element. That means, unlike the descendant combinator, there can’t be another element wrapping .box it has to be a direct child element.
+
+General Sibling Combinator: A selector that uses a general sibling combinator to match elements based on sibling relationships. The selected elements are beside each other in the HTML.
+
+h2 ~ p {
+	margin-bottom: 20px;
+}
+
+<h2>Title</h2>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<div class=”box”>
+	<p>Paragraph example.</p>
+</div>
+In this example, all paragraph elements (<p>) will be styled with the specified rules, but only if they are siblings of <h2> elements. There could be other elements in between the <h2> and <p>, and the styles would still apply.
+
+Adjacent Sibling Combinator: A selector that uses the adjacent sibling combinator uses the plus symbol (+), and is almost the same as the general sibling selector. The difference is that the targeted element must be an immediate sibling, not just a general sibling.
+
+p + p {
+	text-indent: 1.Sem;
+	margin-bottom: 0;
+}
+
+<h2>Title</h2>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+<p>Paragraph example.</p>
+
+<div class=”box”>
+	<p>Paragraph example.</p>
+	<p>Paragraph example.</p>
+</div>
+The above example will apply the specified styles only to paragraph elements that immediately follow other paragraph elements. This means the first paragraph element on a page would not receive these styles. Also, if another element appeared between two paragraphs, the second paragraph of the two wouldn’t have the styles applied.
+
+Attribute Selector: The attribute selector targets elements based on the presence and/or value of HTML attributes, and is declared using square brackets.
+
+input [type=”text”] {
+	background-color: #444;
+	width: 200px;
+}
+
+<input type="text">
+
+q. html dialog element, 
+Note- no need for jquery ui dialog or mui or bootstrap dialog
+
+<div id="dialog" open>
+  <p>Dialog content</p>
+</div>
+
+q. marquee tag
+<marquee> This is a marquee </marquee>
+
